@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#4b7f9d" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>Booba: Sofa Escape</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="appstore-images/android/launchericon-192x192.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <h1>Booba: Sofa Escape</h1>
+    <p class="subtitle">Двигайся по дивану, прыгай и нагибайся, чтобы увернуться от хваталок.</p>
+
+    <section class="hud">
+      <div>Счёт: <span id="score">0</span></div>
+      <div>Рекорд: <span id="best">0</span></div>
+      <div>Скорость: <span id="speed">1.0x</span></div>
+    </section>
+
+    <canvas id="game" width="1024" height="420" aria-label="Игра Booba"></canvas>
+
+    <section class="controls">
+      <p><b>Управление:</b> <kbd>A</kbd>/<kbd>←</kbd> и <kbd>D</kbd>/<kbd>→</kbd> — движение, <kbd>Пробел</kbd>/<kbd>W</kbd>/<kbd>↑</kbd> — прыжок, <kbd>S</kbd>/<kbd>↓</kbd> — нагибаться, <kbd>P</kbd>/<kbd>Esc</kbd> — пауза.</p>
+      <p id="status">Нажми <kbd>Пробел</kbd>, чтобы начать.</p>
+    </section>
+
+    <section class="touch-controls" aria-label="Сенсорное управление">
+      <div class="touch-row">
+        <button type="button" class="touch-btn" data-action="left">◀</button>
+        <button type="button" class="touch-btn" data-action="right">▶</button>
+      </div>
+      <div class="touch-row">
+        <button type="button" class="touch-btn touch-btn-main" data-action="jump">Прыжок</button>
+        <button type="button" class="touch-btn" data-action="duck">Присесть</button>
+        <button type="button" class="touch-btn" data-action="pause">Пауза</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+  <script src="register-sw.js"></script>
+</body>
+</html>
