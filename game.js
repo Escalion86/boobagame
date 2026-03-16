@@ -1572,13 +1572,15 @@ function drawLives() {
 
 function drawHeart(x, y, s, filled) {
   ctx.save();
+  ctx.translate(x, y);
+  ctx.scale(1.28, 1);
   ctx.fillStyle = filled ? "#e44957" : "rgba(180, 120, 120, 0.35)";
   ctx.strokeStyle = "rgba(70,35,35,0.45)";
   ctx.lineWidth = 1.5;
   ctx.beginPath();
-  ctx.moveTo(x, y + s * 0.45);
-  ctx.bezierCurveTo(x - s * 0.55, y - s * 0.05, x - s * 0.35, y - s * 0.65, x, y - s * 0.35);
-  ctx.bezierCurveTo(x + s * 0.35, y - s * 0.65, x + s * 0.55, y - s * 0.05, x, y + s * 0.45);
+  ctx.moveTo(0, s * 0.45);
+  ctx.bezierCurveTo(-s * 0.55, -s * 0.05, -s * 0.35, -s * 0.65, 0, -s * 0.35);
+  ctx.bezierCurveTo(s * 0.35, -s * 0.65, s * 0.55, -s * 0.05, 0, s * 0.45);
   ctx.closePath();
   ctx.fill();
   ctx.stroke();
