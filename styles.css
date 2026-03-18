@@ -45,8 +45,17 @@ h1 {
   margin-bottom: 10px;
 }
 
+.game-stage {
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  /* margin-top: 40px;
+  margin-bottom: 30px; */
+}
+
 canvas {
   width: 100%;
+  display: block;
   border-radius: 12px;
   border: 2px solid #ae9a79;
   background: linear-gradient(#f6f1e6 60%, #ebe1ce);
@@ -54,7 +63,7 @@ canvas {
 }
 
 .controls {
-  margin-top: 10px;
+  /* margin-top: 10px; */
   font-size: 0.95rem;
 }
 
@@ -68,44 +77,106 @@ kbd {
 }
 
 #status {
+  display: block;
+  min-height: 1.4em;
   font-weight: 700;
   color: var(--accent);
 }
 
 .touch-controls {
   display: none;
-  margin-top: 12px;
-  gap: 10px;
+  position: absolute;
+  inset: 0;
   touch-action: none;
+  pointer-events: none;
 }
 
-.touch-row {
+.touch-cluster {
+  position: absolute;
   display: flex;
   gap: 10px;
+  align-items: flex-end;
+  pointer-events: auto;
+}
+
+.touch-left {
+  left: 12px;
+  bottom: -52px;
+}
+
+.touch-right {
+  right: 12px;
+  bottom: -52px;
 }
 
 .touch-btn {
   border: 2px solid #866f4d;
-  border-radius: 10px;
-  background: #fff4df;
+  border-radius: 999px;
+  background: rgba(255, 244, 223, 0.52);
+  backdrop-filter: blur(2px);
   color: #2d2014;
   font-weight: 800;
   font-size: 1rem;
-  padding: 10px 14px;
-  min-width: 68px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: auto;
 }
 
 .touch-btn:active {
   transform: translateY(1px);
-  background: #f3dfbc;
+  background: rgba(243, 223, 188, 0.72);
 }
 
 .touch-btn-main {
-  min-width: 120px;
+  font-size: 1.1rem;
+}
+
+.touch-btn-pause {
+  position: absolute;
+  top: -50px;
+  right: 8px;
 }
 
 @media (hover: none) and (pointer: coarse) {
+
+  h1,
+  .subtitle {
+    display: none;
+  }
+
+  .game-shell {
+    /* padding-top: 14px; */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hud {
+    order: 1;
+  }
+
+  .controls {
+    order: 2;
+    margin: 4px 0 0;
+  }
+
+  #status {
+    margin: 0;
+  }
+
+  .game-stage {
+    order: 3;
+    /* margin-top: 28px; */
+    margin-bottom: 50px;
+  }
+
+  .controls>p:first-child {
+    display: none;
+  }
+
   .touch-controls {
-    display: grid;
+    display: block;
   }
 }

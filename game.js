@@ -1517,7 +1517,7 @@ function drawHudOverlay() {
   speedEl.textContent = `${(state.speed / 320).toFixed(1)}x`;
 
   if (!state.running && !state.gameOver) {
-    centerText("Нажми Пробел, чтобы начать", H / 2 - 30);
+    centerText("Нажми или коснись, чтобы начать", H / 2 - 30);
   }
 
   if (state.gameOver) {
@@ -1543,8 +1543,11 @@ function drawLevelBanner() {
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
 
-  ctx.fillStyle = "rgba(255, 255, 255, 0.75)";
+  ctx.fillStyle = "rgba(66, 44, 24, 0.95)";
+  ctx.strokeStyle = "rgba(255, 246, 224, 0.95)";
+  ctx.lineWidth = 2;
   ctx.font = "900 24px Trebuchet MS";
+  ctx.strokeText("УРОВЕНЬ", 0, -14);
   ctx.fillText("УРОВЕНЬ", 0, -14);
 
   ctx.fillStyle = "rgba(43, 30, 18, 0.95)";
@@ -1558,10 +1561,10 @@ function drawLevelBanner() {
 }
 
 function drawLives() {
-  const size = 20;
+  const size = 28;
   const gap = 10;
   const total = state.maxLives;
-  const startX = W - 28 - (size * 2 + gap) * total + (size * 2 + gap);
+  const startX = W - 36 - (size * 2 + gap) * total + (size * 2 + gap);
   const y = 42;
   for (let i = 0; i < total; i++) {
     const filled = i < state.lives;

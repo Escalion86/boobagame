@@ -22,24 +22,29 @@
       <div>Скорость: <span id="speed">1.0x</span></div>
     </section>
 
-    <canvas id="game" width="1024" height="420" aria-label="Игра Booba"></canvas>
+    <section class="game-stage">
+      <canvas id="game" width="1024" height="420" aria-label="Игра Booba"></canvas>
+
+      <section class="touch-controls" aria-label="Сенсорное управление">
+        <button type="button" class="touch-btn touch-btn-pause" data-action="pause" aria-label="Пауза">II</button>
+
+        <div class="touch-cluster touch-left">
+          <button type="button" class="touch-btn" data-action="left" aria-label="Влево">◀</button>
+          <button type="button" class="touch-btn" data-action="right" aria-label="Вправо">▶</button>
+        </div>
+
+        <div class="touch-cluster touch-right">
+          <button type="button" class="touch-btn touch-btn-main" data-action="jump" aria-label="Прыжок">⤒</button>
+          <button type="button" class="touch-btn" data-action="duck" aria-label="Присесть">⤓</button>
+        </div>
+      </section>
+    </section>
 
     <section class="controls">
       <p><b>Управление:</b> <kbd>A</kbd>/<kbd>←</kbd> и <kbd>D</kbd>/<kbd>→</kbd> — движение, <kbd>Пробел</kbd>/<kbd>W</kbd>/<kbd>↑</kbd> — прыжок, <kbd>S</kbd>/<kbd>↓</kbd> — нагибаться, <kbd>P</kbd>/<kbd>Esc</kbd> — пауза.</p>
-      <p id="status">Нажми <kbd>Пробел</kbd>, чтобы начать.</p>
+      <p id="status"></p>
     </section>
 
-    <section class="touch-controls" aria-label="Сенсорное управление">
-      <div class="touch-row">
-        <button type="button" class="touch-btn" data-action="left">◀</button>
-        <button type="button" class="touch-btn" data-action="right">▶</button>
-      </div>
-      <div class="touch-row">
-        <button type="button" class="touch-btn touch-btn-main" data-action="jump">Прыжок</button>
-        <button type="button" class="touch-btn" data-action="duck">Присесть</button>
-        <button type="button" class="touch-btn" data-action="pause">Пауза</button>
-      </div>
-    </section>
   </main>
 
   <script src="game.js"></script>
