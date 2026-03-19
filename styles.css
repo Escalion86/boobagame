@@ -123,6 +123,11 @@ kbd {
   display: grid;
   place-items: center;
   pointer-events: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .touch-btn:active {
